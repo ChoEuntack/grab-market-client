@@ -1,0 +1,3 @@
+html, body, #root, #root > div {
+  height: 100%
+} /*화명 구성 재조정 */
