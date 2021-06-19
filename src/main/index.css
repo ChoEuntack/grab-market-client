@@ -8,7 +8,7 @@
     justify-content: center;
 }
 #body {
-    height: 100vh;
+    height: 100vh; /* vh: 윈도우 높이를 기준으로 하는 높이 */
     width: 1024px;
     margin: 0 auto; /* flex없이 가운데 정렬하는방법(일단 가볍게 pass)*/
     padding: 24px; /*footer랑 좀 떨어지게 */
@@ -75,4 +75,8 @@
 .product-avatar {
     
     width: 24px;
+}
+.product-link {  /*link를 사용하면 <a>로 변환됨 => <a> 는 내부 컨텐츠 들의 밑줄과 색상을 바꿔버림 */
+    color: inherit;  /* 자식들이 기존이 가지고 있었던 색상을 갖게해줌 */
+    text-decoration: none; /* 밑줄을 없애줌*/
 }

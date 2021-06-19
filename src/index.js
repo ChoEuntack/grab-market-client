@@ -4,10 +4,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom"; // BrowserRouter가 부모 컴포먼트로써 감싸야 페이지 이동 가능
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+  <BrowserRouter > 
+    <App /> 
+  </BrowserRouter > 
   </React.StrictMode>,
   document.getElementById('root')
 );

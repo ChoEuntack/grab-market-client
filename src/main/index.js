@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css' //export가 없는 css 경우 from을 뺌 -> css 파일을 다 불러오게 됨 
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 function MainPageComponent() {
     const [products, setProducts] = React.useState([]) // 상품정보는 배열이기에 기본값을 빈 배열[]로 넣음
@@ -30,8 +31,9 @@ function MainPageComponent() {
         {products.map(function (product,index){
             return (
                 <div className = 'product-card'>
+                    <Link className = "product-link" to = {`/product/${index}`}>
                     <div>
-                        <img className = 'product-img' src = {product.imageUrl} />
+                         <img className = 'product-img' src = {product.imageUrl} />
                     </div>
                     <div className = 'product-contents'>
                         <span className = 'product-name'>{product.name}</span> 
@@ -41,6 +43,7 @@ function MainPageComponent() {
                             <span>{product.seller}</span>
                             </div>
                         </div>
+                        </Link>
                     </div>
             );
         })}
