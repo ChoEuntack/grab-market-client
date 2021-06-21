@@ -5,33 +5,26 @@ import {Link} from "react-router-dom";
 
 function MainPageComponent() {
     const [products, setProducts] = React.useState([]) // 상품정보는 배열이기에 기본값을 빈 배열[]로 넣음
-    React.useEffect(function(){ //무한 데터링을 방지하기 위해 -> state업데이트 시 다시 레더링 되기때문
+    React.useEffect(function(){ //무한 데터링을 방지하기 위해 -> state업데이트 시 다시 레더링 되기때문(무한으로)
         axios.get("https://209cf61c-19df-4cd7-8cdc-73a2077e3cd4.mock.pstmn.io/products")
         .then(function(result){
-            const products = result.data.products;
-            setProducts(products); //정보를 받은 후의 업데이트 된 products를 가지고 재실행
+            setProducts(result.data.products); //정보를 받은 후의 업데이트 된 products를 가지고 재실행
         }).catch(function(error){
             console.log(error);
         });
     }, []);
     
     return ( // 복수 개의 태그를 리턴할 수 없음 => 여러 태그들을 리턴을 떄 무조건 하나의 태그(div) 같은걸로 감싸줘야 됌
-    <div>
-        <div id = 'header'>
-        <div id = "header-area">
-        <img src = 'images/icons/logo.png' />
-        </div>
-        </div>
-        <div id = "body">
+    <div>  
         <div id = 'banner'>
         <img src= "images/banners/banner1.png" />    
-     </div>
+     </div> 
         <h1>판매되는 상품들</h1>
         <div id = 'product-list'>  
         {products.map(function (product,index){
             return (
                 <div className = 'product-card'>
-                    <Link className = "product-link" to = {`/product/${index}`}>
+                    <Link className = "product-link" to = {`/product/${product.id}`}>
                     <div>
                          <img className = 'product-img' src = {product.imageUrl} />
                     </div>
@@ -48,8 +41,7 @@ function MainPageComponent() {
             );
         })}
         </div>         
-    </div>
-    <div id = "footer"></div>
+
 </div>
     );
 }

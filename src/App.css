@@ -1,3 +1,37 @@
+* { /*사이트는 기본 margin과 padding주어지는데 이것을 다 초기화 시킴*/
+  margin: 0;
+  padding: 0;
+  line-height: normal; /*antd 기본 line-height 를 바꿔줌 */;
+}
 html, body, #root, #root > div {
   height: 100%
 } /*화명 구성 재조정 */
+
+/* headder body, footer css를 app.css로 옮김 */
+#header {
+  height: 64px;
+  display: flex;
+  justify-content: center;
+}
+
+#header-area {
+  width: 1024px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /*상품업로드와 그랩마켓 양 사이드로*/
+}
+#header-area img {
+  width: 128px;
+  height: 36px;
+}
+
+#body {
+  height: 100vh; /* vh: 윈도우 높이를 기준으로 하는 높이 */
+  width: 1024px;
+  margin: 0 auto; /* flex없이 가운데 정렬하는방법(일단 가볍게 pass)*/
+  padding: 24px; /*footer랑 좀 떨어지게 */
+}
+#footer {
+  height: 200px;
+  background-color: rgb(230, 230, 230);
+}

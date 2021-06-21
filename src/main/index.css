@@ -1,7 +1,4 @@
-* { /*사이트는 기본 margin과 padding주어지는데 이것을 다 초기화 시킴*/
-    margin: 0;
-    padding: 0;
-}
+
 #header {
     height: 64px;
     display: flex;
@@ -20,15 +17,6 @@
 #banner {
     height: 300px;
     background-color: yellow;
-}
-#header-area {
-    width: 1024px;
-    display: flex;
-    align-items: center;
-}
-#header-area > img {
-    width: 128px;
-    height: 36px;
 }
 #banner > img {
     width: 100%;
