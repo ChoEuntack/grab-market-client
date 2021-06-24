@@ -4,10 +4,10 @@ import { useEffect , useState} from 'react';
 import './index.css'
 
 function ProductPage() { 
-    const {id} = useParams(); //useParams: id 값을  받게 해줌, {} 는 es6의 구조분해 할당(객채 말고 숫자로 받기위해)
+    const {id} = useParams(); //useParams: id 값(파라미터)을  받게 해줌, {} 는 es6의 구조분해 할당(객채 말고 숫자로 받기위해)
     const [product, setProduct] = useState(null);
     useEffect(function(){    //왜 state사용할까?
-      axios.get("https://209cf61c-19df-4cd7-8cdc-73a2077e3cd4.mock.pstmn.io/products/" + id)
+      axios.get(`https://209cf61c-19df-4cd7-8cdc-73a2077e3cd4.mock.pstmn.io/products/${id}`)
       .then(function(result){
         setProduct(result.data);
       }).catch(function(error) {

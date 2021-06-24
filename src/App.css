@@ -1,7 +1,7 @@
 * { /*사이트는 기본 margin과 padding주어지는데 이것을 다 초기화 시킴*/
   margin: 0;
   padding: 0;
-  line-height: normal; /*antd 기본 line-height 를 바꿔줌 */;
+  line-height: normal; /*antd 기본 line-height 를 바꿔버려서 재조정*/;
 }
 html, body, #root, #root > div {
   height: 100%

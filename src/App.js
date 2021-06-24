@@ -26,11 +26,11 @@ function App() {
         </div>
         </div>
         <div id = "body">
-      <Switch>
-        <Route exact={true} path="/">
+      <Switch> {/*route를 하나의 컴포먼트로 연결시켜준다라고 이해*/}
+        <Route exact={true} path="/"> {/* path = / 를 넣어 이 밑 컴포먼트를 기본(홈)으로 지정하겠다*/}
           <MainPageComponent />
         </Route>
-        <Route exact={true} path="/product/:id">
+        <Route exact={true} path="/product/:id" > {/*id는 파라미터(변화는 값-> 어떤 숫자가 들어가도 됌)*/}  
           <ProductPage />
         </Route>
         <Route exact={true} path="/upload">
